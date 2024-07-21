@@ -6011,4 +6011,4 @@ List<Map<String,dynamic>> allProducts = [
 
 List<String> allCategories = allProducts.map((e) => e['category'].toString()).toSet().toList();
 
-List<String> cartitems = [];
+List<Map<String,dynamic>> cartitems = [];

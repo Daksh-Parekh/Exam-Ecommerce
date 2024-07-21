@@ -1,7 +1,6 @@
 import 'package:e_commerce_exam/utils/products.dart';
 import 'package:e_commerce_exam/views/screens/extensions.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -46,7 +45,7 @@ class _HomepageState extends State<Homepage> {
                     ),
                     ...allCategories.map((e) => DropdownMenuItem(
                       value: e,
-                      child: Text(e),
+                      child: Text(e.tcase),
                       ),
                     ),
                   ],
@@ -144,8 +143,9 @@ class _HomepageState extends State<Homepage> {
                         TextButton.icon(
                           onPressed: (){
                             if(!cartitems.contains(e)){
-                              cartitems.add(e.toString());
-                            }
+                              cartitems.add(e);
+                              e['qty'] = 1;
+                             }
                             setState(() {});
                           },
                           icon: Icon(Icons.shopping_cart_checkout_rounded),
